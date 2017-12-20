@@ -1,3 +1,10 @@
+def foo(seq):
+    total = 0
+    for k in range(1, len(seq), 2):
+        total = total + seq[k]
+    return total
+
+
 """
 This module demonstrates OVERLOADING the  +  symbol:
   -- With numbers as operands, it means addition (as in arithmetic)
