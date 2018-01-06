@@ -452,7 +452,7 @@ def polygon(window, circle, number_of_segments, color, thickness):
 def run_test_fancy_polygon():
     """ Tests the   fancy_polygon   function. """
     # ------------------------------------------------------------------
-    # TODO: 9. Implement this TEST function.
+    # DONE: 9. Implement this TEST function.
     #   It TESTS the   fancy_polygon   function defined below.
     #   Include at least ** 1 ** ADDITIONAL test (that YOU write).
     #
@@ -497,7 +497,14 @@ def run_test_fancy_polygon():
     #   For all these, filling the circles with one color and using
     #   a contrasting color for the lines makes them especially pretty.
     # ------------------------------------------------------------------
+    # Test 4
+    title = 'FANCY POLYGON test 4'
+    window = rg.RoseWindow(480, 350, 'title')
 
+    circle = rg.Circle(rg.Point(250, 250), 100)
+    circle.fill_color = 'black'
+    fancy_polygon(window, circle, 20, 5, 'pink', 4)
+    window.close_on_mouse_click()
 
 def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, thickness):
     """
@@ -557,7 +564,7 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, th
       :type thickness:       int
     """
     # ------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -570,6 +577,16 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, th
     #       appropriately.  ASK YOUR INSTRUCTOR FOR AN EXAMPLE.
     ####################################################################
     # ------------------------------------------------------------------
+
+    circle.attach_to(window)
+    points = generate_points_on_circle(circle,number_of_lines)
+    for k in range (len(points)):
+        line = rg.Line(points[k], points[(k + hops_to_next_point) % len(points)])
+        line.arrow = 'last'
+        line.color = color
+        line.thickness = thickness
+        line.attach_to(window)
+    window.render(.05)
 
 
 # ----------------------------------------------------------------------
