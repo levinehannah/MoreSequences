@@ -403,13 +403,13 @@ def rectangles_from_circles(circles):
 
     rect = []
     for k in range(len(circles)):
-        p1x = circles[k].center.x - circles[k].radius
-        p1y = circles[k].center.y - circles[k].radius
-        p2x = circles[k].center.x + circles[k].radius
-        p2y = circles[k].center.y + circles[k].radius
-        p1 = rg.Point(p1x, p1y)
-        p2 = rg.Point(p2x, p2y)
-        rect += [rg.Rectangle(p1, p2)]
+        point1x = circles[k].center.x - circles[k].radius
+        point1y = circles[k].center.y - circles[k].radius
+        point2x = circles[k].center.x + circles[k].radius
+        point2y = circles[k].center.y + circles[k].radius
+        point1 = rg.Point(point1x, point1y)
+        point2 = rg.Point(point2x, point2y)
+        rect += [rg.Rectangle(point1, point2)]
     return rect
 
 # ----------------------------------------------------------------------
