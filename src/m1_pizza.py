@@ -389,7 +389,7 @@ def run_test_polygon():
 
     circle = rg.Circle(rg.Point(150, 150), 120)
     circle.outline_thickness = 6
-    circle.fill_color = 'brown'
+    circle.fill_color = 'black'
     polygon(window, circle, 6, 'orange', 4)
     window.continue_on_mouse_click()
 
@@ -502,8 +502,8 @@ def run_test_fancy_polygon():
     window = rg.RoseWindow(480, 350, 'title')
 
     circle = rg.Circle(rg.Point(250, 250), 100)
-    circle.fill_color = 'black'
-    fancy_polygon(window, circle, 20, 5, 'pink', 4)
+    circle.fill_color = 'brown'
+    fancy_polygon(window, circle, 20, 5, 'yellow', 4)
     window.close_on_mouse_click()
 
 def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, thickness):
